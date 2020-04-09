@@ -18,6 +18,9 @@ export default class ClassList extends Component {
     console.log(results)
    })
   }
+  handleGoBack = () => {
+    this.props.history.push('/')
+  }
   render() {
     const student = this.state.students.map((student, index) => {
     return (
@@ -31,6 +34,7 @@ export default class ClassList extends Component {
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
         {student}
+        <button onClick={this.handleGoBack} >CLICK ME TO GO BACK</button>
       </div>
     )
   }
